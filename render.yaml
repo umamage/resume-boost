@@ -6,7 +6,8 @@ services:
     region: oregon
     plan: free
     rootDir: backend
-    # No buildCommand so Render uses its auto-detection (Poetry)
+    # Debug info: List files to see where we are
+    buildCommand: "ls -la && pip install -r requirements.txt"
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
