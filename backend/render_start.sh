@@ -19,6 +19,6 @@ python -c "import sys; print(sys.path)"
 # Try import verification
 python -c "import app.main; print('Import successful from script')" || echo "Import failed in script"
 
-# Start application
-echo "Starting uvicorn..."
-uvicorn app.main:app --host 0.0.0.0 --port $PORT
+# Start application with python -m to ensure path ensures
+echo "Starting uvicorn via python -m..."
+python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
