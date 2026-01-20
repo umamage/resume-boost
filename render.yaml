@@ -5,8 +5,7 @@ services:
     env: python
     region: oregon
     plan: free
-    buildCommand: ./build-backend.sh
-    startCommand: ./start-backend.sh
+    rootDir: backend
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.1
