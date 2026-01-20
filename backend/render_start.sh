@@ -17,7 +17,7 @@ echo "Python Path after export:"
 python -c "import sys; print(sys.path)"
 
 # Try import verification
-python -c "import app.main; print('Import successful from script')" || echo "Import failed in script"
+python -c "import backendapp.main; print('Import successful from script')" || echo "Import failed in script"
 
 # Start application with python -m to ensure path ensures
 echo "Starting uvicorn via python -m..."
