@@ -5,10 +5,10 @@ services:
     env: python
     region: oregon
     plan: free
-    rootDir: backend
-    # Debug info: List files to see where we are
-    buildCommand: "ls -la && pip install -r requirements.txt"
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    # Remove rootDir, run from repo root
+    buildCommand: pip install -r requirements.txt
+    # Explicitly set app directory for uvicorn
+    startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.1
